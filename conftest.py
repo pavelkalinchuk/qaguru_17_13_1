@@ -10,7 +10,7 @@ from allure_attach import *
 load_dotenv()
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function")
 def browser_start():
     driver_options = webdriver.ChromeOptions()
     driver_options.page_load_strategy = 'eager'

@@ -4,7 +4,7 @@ import os
 
 
 @allure.title("Тестирование формы регистрации")
-def test_practice_form():
+def test_practice_form(browser_start):
     with allure.step("Заполняем поля 'First Name' и 'Last Name' в блоке 'Name'"):
         browser.element('[id="firstName"]').click().type("Pavel")
         browser.element('[id="lastName"]').click().type("Kalinchuk")
@@ -35,7 +35,7 @@ def test_practice_form():
         browser.element('label[for="hobbies-checkbox-3"]').click()
 
     with allure.step("Добавляем картинку в блоке 'Picture'"):
-        browser.element('#uploadPicture').send_keys(os.path.abspath('test_file.png'))
+        browser.element('#uploadPicture').send_keys(os.path.abspath('../test_file.png'))
 
     with allure.step("Заполняем поле 'Current Address'"):
         browser.element('#currentAddress').should(be.visible).click().send_keys("г. Москва, ул. 1-я Строителей, д.1, кв.1")
