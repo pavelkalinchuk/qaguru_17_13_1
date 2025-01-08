@@ -2,7 +2,7 @@ import random
 import allure
 
 
-@allure.title("Пытаем удачу на чёт. Чёт - тест пройден, Нечёт - не пройден.")
+@allure.title("Пытаем удачу на чёт: 'чёт' - тест пройден, 'нечёт' - не пройден.")
 def test_check_random():
     with allure.step("Генерируем рандомное число от 1 до 10"):
         random_integer = random.randint(1, 10)
